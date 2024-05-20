@@ -14,7 +14,10 @@ export default function Header() {
         </Link>
         {/* <li className="px-2">Contact</li> */}
 
-        <Button className="rounded-3xl px-7 bg-[#141414]" asChild>
+        <Button
+          className="rounded-3xl px-7 bg-[#141414] hover:bg-[#606060]"
+          asChild
+        >
           <Link href="/contact" className="px-2">
             CONTACTE-NOS
           </Link>

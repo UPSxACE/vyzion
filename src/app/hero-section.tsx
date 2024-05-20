@@ -28,7 +28,10 @@ export default function HeroSection(props: Props) {
         {/* <span className="font-bold text-xl">{sub}</span> */}
         <h1 className="font-bold text-5xl leading-snug">{title}</h1>
         <p>{paragraph}</p>
-        <Button className="w-fit bg-[#141414] mt-12 py-6 px-10" size="lg">
+        <Button
+          className="w-fit bg-[#141414] mt-12 py-6 px-10 hover:bg-[#606060]"
+          size="lg"
+        >
           {buttonText}
         </Button>
       </div>
