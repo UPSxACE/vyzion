@@ -4,6 +4,8 @@ import Footer from "@/components/ui-layout/footer";
 import Header from "@/components/ui-layout/header";
 import HeroSection from "./hero-section";
 
+export const revalidate = 1 * 60;
+
 export default async function Home() {
   const homepageTexts: Record<string, string> = {};
   const homepageFeatureCards: Record<string, any> = {};
