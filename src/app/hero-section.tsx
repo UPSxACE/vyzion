@@ -25,11 +25,15 @@ export default function HeroSection(props: Props) {
   return (
     <div
       className={twMerge(
-        "max-w-[1200px] flex flex-col justify-center text-white",
+        "max-w-[1200px] flex text-white justify-end relative",
         className
       )}
     >
-      <div className={"flex flex-col max-w-[540px] justify-center gap-4"}>
+      <img
+        className="absolute top-[-86px] left-0 z-0 object-cover w-full h-[calc(100%+86px)]"
+        src="/home-background.jpg"
+      />
+      <div className={"flex flex-col max-w-[540px] justify-center gap-4 z-10"}>
         {/* <span className="font-bold text-xl">{sub}</span> */}
         <h1 className="font-bold text-5xl leading-snug">{title}</h1>
         <p>{paragraph}</p>

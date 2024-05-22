@@ -5,14 +5,15 @@ interface Props {
     icon: string;
     title: string;
     paragraph: string;
+    color: string;
   };
 }
 
 export default function Card(props: Props) {
-  const { icon, title, paragraph } = props.data;
+  const { icon, title, paragraph, color } = props.data;
   return (
     <article className="w-full xl:w-[380px] bg-white p-9 flex flex-col gap-4">
-      <span className="text-4xl text-[#97959a]">
+      <span className="text-4xl" style={{ color }}>
         <IconComponent icon={icon} />
       </span>
       <h1 className="text-2xl font-semibold text-[22px]">{title}</h1>

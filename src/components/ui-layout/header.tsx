@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 
 export default function Header() {
   return (
-    <header className="h-[86px] flex py-6">
+    <header className="h-[86px] flex py-6 z-10">
       <div className="flex items-start  relative h-[40px] w-[149.25px]">
         <Image alt="logo" src="/logo-dark.svg" fill objectFit="contain" />
       </div>

@@ -21,8 +21,8 @@ export default async function Home() {
   await api.get("api/homepage-feature-cards").then((res) => {
     res.data.data.forEach(
       ({ attributes }: { attributes: Record<string, string> }) => {
-        const { field, title, paragraph, icon } = attributes;
-        homepageFeatureCards[field] = { title, paragraph, icon };
+        const { field, title, paragraph, icon, color } = attributes;
+        homepageFeatureCards[field] = { title, paragraph, icon, color };
       },
       {}
     );
@@ -33,7 +33,7 @@ export default async function Home() {
 
   return (
     <main>
-      <section className="min-h-screen bg-[#32323a] flex justify-center px-6">
+      <section className="min-h-screen bg-[#242424] flex justify-center px-6">
         <div className="max-w-[1200px] flex-1 w-full flex flex-col">
           <Header />
           <HeroSection
@@ -58,7 +58,7 @@ export default async function Home() {
           <Card data={homepageFeatureCards.card6} />
         </div>
       </section>
-      <section className="flex justify-center bg-[#32323a] px-6">
+      <section className="flex justify-center bg-[#242424] px-6">
         <div className="max-w-[1200px] flex-1">
           <Footer />
         </div>
