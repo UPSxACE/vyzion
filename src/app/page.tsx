@@ -2,6 +2,7 @@ import api from "@/api";
 import Card from "@/components/branding/card";
 import Footer from "@/components/ui-layout/footer";
 import Header from "@/components/ui-layout/header";
+import Image from "next/image";
 import HeroSection from "./hero-section";
 
 export const revalidate = 1 * 60;
@@ -31,11 +32,29 @@ export default async function Home() {
   const { title, paragraph, button, features_title, features_paragraph } =
     homepageTexts;
 
-
   return (
     <main>
       <section className="min-h-screen bg-[#242424] flex justify-center px-6">
-        <div className="max-w-[1200px] flex-1 w-full flex flex-col">
+        <div className="max-w-[1200px] flex-1 w-full flex flex-col relative overflow-hidden">
+          <Image
+            alt="background pattern"
+            width={450}
+            height={160.7}
+            className="absolute top-0 left-[130px] z-0 object-cover"
+            src="/home-bg-pattern-top.png"
+            priority
+            sizes="515.2px"
+          />
+
+          <Image
+            alt="background pattern"
+            width={350}
+            height={259.7}
+            className="absolute bottom-0 right-0 z-0 object-cover"
+            src="/home-bg-pattern-bottom.png"
+            priority
+          />
+
           <Header />
           <HeroSection
             title={title}

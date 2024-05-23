@@ -23,6 +23,9 @@ const formSchema = z.object({
     .string({ required_error: "Endereço de email inválido." })
     .email({ message: "Endereço de email inválido." })
     .min(1, { message: "Por favor, insira o seu email." }),
+  subject: z
+    .string({ required_error: "Por favor, insira o assunto." })
+    .min(1, { message: "Por favor, insira o assunto." }),
   message: z
     .string({ required_error: "Por favor, insira a sua mensagem." })
     .min(1, { message: "Por favor, insira a sua mensagem." }),
@@ -34,6 +37,7 @@ export default function ContactForm() {
     defaultValues: {
       name: "",
       email: "",
+      subject: "",
       message: "",
     },
   });
@@ -73,6 +77,23 @@ export default function ContactForm() {
               <>
                 <DarkFormItem>
                   <DarkFormLabel>Email</DarkFormLabel>
+                  <FormControl>
+                    <DarkFormInput placeholder="" {...field} />
+                  </FormControl>
+                </DarkFormItem>
+                <FormMessage className="pl-1" />
+              </>
+            );
+          }}
+        />
+        <FormField
+          control={form.control}
+          name="subject"
+          render={({ field }) => {
+            return (
+              <>
+                <DarkFormItem>
+                  <DarkFormLabel>Assunto</DarkFormLabel>
                   <FormControl>
                     <DarkFormInput placeholder="" {...field} />
                   </FormControl>
