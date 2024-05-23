@@ -39,6 +39,7 @@ export default function HeroSection(props: Props) {
                   alt="background image"
                   className="object-cover"
                   src="/home-bg-image-cropped-v2.jpg"
+                  blurDataURL="/home-bg-image-cropped-v2-blur.jpg"
                   priority
                   placeholder="blur"
                 />
