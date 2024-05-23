@@ -2,7 +2,10 @@ import api from "@/api";
 import Card from "@/components/branding/card";
 import Footer from "@/components/ui-layout/footer";
 import Header from "@/components/ui-layout/header";
+import MobileNavbarContent from "@/components/ui-layout/mobile-navbar/mobile-navbar-content";
+import MobileNavbarItem from "@/components/ui-layout/mobile-navbar/mobile-navbar-item";
 import Image from "next/image";
+import Link from "next/link";
 import HeroSection from "./hero-section";
 
 export const revalidate = 1 * 60;
@@ -34,7 +37,7 @@ export default async function Home() {
 
   return (
     <main>
-      <section className="min-h-screen bg-[#242424] flex justify-center px-6">
+      <section className="min-h-screen bg-[#242424] flex justify-center px-6 relative">
         <div className="max-w-[1200px] flex-1 w-full flex flex-col relative overflow-hidden">
           <Image
             alt="background pattern"
@@ -61,6 +64,14 @@ export default async function Home() {
             className="w-full flex-1"
           />
         </div>
+        <MobileNavbarContent className="absolute left-0 top-[86px] w-full">
+          <MobileNavbarItem asChild>
+            <Link href="/">Home</Link>
+          </MobileNavbarItem>
+          <MobileNavbarItem asChild>
+            <Link href="/contact">Contacte-nos</Link>
+          </MobileNavbarItem>
+        </MobileNavbarContent>
       </section>
       <section className="bg-[#f6f6f6] min-h-screen flex flex-col justify-center items-center gap-4 py-20 px-6">
         <h1 className="text-4xl font-bold">{features_title}</h1>

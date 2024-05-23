@@ -1,14 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import MobileNavbarHamburger from "./mobile-navbar/mobile-navbar-hamburger";
 
 export default function Header() {
   return (
     <header className="h-[86px] flex py-6 z-10">
-      <div className="flex items-start  relative h-[40px] w-[149.25px]">
+      <Link
+        href="/"
+        className="flex items-start  relative h-[40px] w-[149.25px]"
+      >
         <Image alt="logo" src="/logo-dark.svg" fill objectFit="contain" />
-      </div>
-      <nav className="ml-auto flex items-center gap-4 text-white">
+      </Link>
+      <nav className="ml-auto hidden lg:flex items-center gap-4 text-white">
         <Link href="/" className="px-2">
           Home
         </Link>
@@ -23,6 +27,7 @@ export default function Header() {
           </Link>
         </Button>
       </nav>
+      <MobileNavbarHamburger className="ml-auto" />
     </header>
   );
 }

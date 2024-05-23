@@ -1,5 +1,7 @@
 import Footer from "@/components/ui-layout/footer";
 import Header from "@/components/ui-layout/header";
+import MobileNavbarContent from "@/components/ui-layout/mobile-navbar/mobile-navbar-content";
+import MobileNavbarItem from "@/components/ui-layout/mobile-navbar/mobile-navbar-item";
 import Link from "next/link";
 import ContactForm from "./contact-form";
 
@@ -7,6 +9,14 @@ export default function ContactPage() {
   return (
     <main>
       <section className="min-h-screen flex bg-[#242424] justify-center px-6">
+        <MobileNavbarContent className="absolute left-0 top-[86px] w-full">
+          <MobileNavbarItem asChild>
+            <Link href="/">Home</Link>
+          </MobileNavbarItem>
+          <MobileNavbarItem asChild>
+            <Link href="/contact">Contacte-nos</Link>
+          </MobileNavbarItem>
+        </MobileNavbarContent>
         <div className="max-w-[1200px] flex-1 w-full flex flex-col text-[#97959a]">
           <Header />
           <div className=" h-full flex justify-center items-center py-10">
