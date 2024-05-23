@@ -2,6 +2,7 @@ import Footer from "@/components/ui-layout/footer";
 import Header from "@/components/ui-layout/header";
 import MobileNavbarContent from "@/components/ui-layout/mobile-navbar/mobile-navbar-content";
 import MobileNavbarItem from "@/components/ui-layout/mobile-navbar/mobile-navbar-item";
+import Image from "next/image";
 import Link from "next/link";
 import ContactForm from "./contact-form";
 
@@ -17,7 +18,7 @@ export default function ContactPage() {
             <Link href="/contact">Contacte-nos</Link>
           </MobileNavbarItem>
         </MobileNavbarContent>
-        <div className="max-w-[1200px] flex-1 w-full flex flex-col text-[#97959a]">
+        <div className="max-w-[1200px] flex-1 w-full flex flex-col text-[#97959a] z-10">
           <Header />
           <div className=" h-full flex justify-center items-center py-10">
             {/* <h1 className="text-white text-2xl">
@@ -41,7 +42,7 @@ export default function ContactPage() {
               </div>
               <div className="grid grid-cols-2 gap-6">
                 <ContactForm />
-                <article className="order-1 col-span-2 sm:col-span-1 justify-center bg-[#1a1a1a] flex-col sm:order-2 flex gap-2 p-6">
+                <article className="order-1 col-span-2 sm:col-span-1 justify-center bg-[#161616] flex-col sm:order-2 flex gap-2 p-6">
                   <div className="flex gap-2">
                     <span>Email:</span>
                     <Link
@@ -79,6 +80,23 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
+        </div>
+        <div className="absolute max-w-[1200px] flex-1 w-full flex flex-col h-full z-0 overflow-hidden">
+          <Image
+            alt="background pattern"
+            width={450}
+            height={160.7}
+            className="absolute top-0 left-[210px] z-0 object-cover"
+            src="/home-bg-pattern-top.png"
+            sizes="640px"
+          />
+          <Image
+            alt="background pattern"
+            width={350}
+            height={259.7}
+            className="absolute bottom-[2px] right-0 z-0 object-cover"
+            src="/home-bg-pattern-bottom.png"
+          />
         </div>
       </section>
 

@@ -43,7 +43,7 @@ export default async function Home() {
             alt="background pattern"
             width={450}
             height={160.7}
-            className="absolute top-0 left-[130px] z-0 object-cover"
+            className="absolute top-0 left-[210px] z-0 object-cover"
             src="/home-bg-pattern-top.png"
             sizes="640px"
           />
@@ -52,7 +52,7 @@ export default async function Home() {
             alt="background pattern"
             width={350}
             height={259.7}
-            className="absolute bottom-0 right-0 z-0 object-cover"
+            className="absolute  bottom-[2px] right-0 z-0 object-cover"
             src="/home-bg-pattern-bottom.png"
           />
 

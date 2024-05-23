@@ -7,7 +7,7 @@ export default function DarkFormItem(props: Props) {
   return (
     <FormItem
       {...props}
-      className={twMerge("bg-[#1a1a1a] flex items-stretch", props.className)}
+      className={twMerge("bg-[#161616] flex items-stretch", props.className)}
     />
   );
 }
