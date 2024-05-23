@@ -43,10 +43,11 @@ const MotionCard: CustomDomComponent<CardProps> = motion(Card);
 
 export default function FeatureCards(props: Props) {
   const { data } = props;
+
   return (
     <motion.div
       variants={container}
-      initial="hidden"
+      initial={"hidden"}
       whileInView="show"
       viewport={{ amount: 0.4, once: true }}
       className="grid grid-cols-1 grid-rows-6 xl:grid-cols-3 sm:grid-rows-2 gap-5 py-[2.25rem]"
