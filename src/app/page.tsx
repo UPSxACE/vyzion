@@ -42,8 +42,7 @@ export default async function Home() {
             height={160.7}
             className="absolute top-0 left-[130px] z-0 object-cover"
             src="/home-bg-pattern-top.png"
-            priority
-            sizes="515.2px"
+            sizes="640px"
           />
 
           <Image
@@ -52,7 +51,6 @@ export default async function Home() {
             height={259.7}
             className="absolute bottom-0 right-0 z-0 object-cover"
             src="/home-bg-pattern-bottom.png"
-            priority
           />
 
           <Header />
