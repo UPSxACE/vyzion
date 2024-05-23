@@ -40,6 +40,7 @@ export default function HeroSection(props: Props) {
                   className="object-cover"
                   src="/home-bg-image-cropped-v2.jpg"
                   priority
+                  placeholder="blur"
                 />
               </div>
             </div>
