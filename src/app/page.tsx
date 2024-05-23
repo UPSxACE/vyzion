@@ -31,6 +31,7 @@ export default async function Home() {
   const { title, paragraph, button, features_title, features_paragraph } =
     homepageTexts;
 
+
   return (
     <main>
       <section className="min-h-screen bg-[#242424] flex justify-center px-6">

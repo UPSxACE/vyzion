@@ -1,4 +1,4 @@
-import { IconType } from "react-icons";
+import { IconType } from "react-icons/";
 
 interface IIconComponent {
   icon: string;
@@ -51,6 +51,13 @@ export const IconComponent: React.FC<IIconComponent> = async ({
     const DynamicIconComponent = (await import("react-icons/fa").then(
       (mod) => mod[icon]
     )) as IconType;
+
+    if (!DynamicIconComponent) {
+      const DynamicIconComponent = (await import("react-icons/fa6").then(
+        (mod) => mod[icon]
+      )) as IconType;
+      return <DynamicIconComponent size={size} />;
+    }
 
     return <DynamicIconComponent size={size} />;
   }

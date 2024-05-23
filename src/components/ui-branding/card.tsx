@@ -11,6 +11,7 @@ interface Props {
 
 export default function Card(props: Props) {
   const { icon, title, paragraph, color } = props.data;
+
   return (
     <article className="w-full xl:w-[380px] bg-white p-9 flex flex-col gap-4">
       <span className="text-4xl" style={{ color }}>
