@@ -37,7 +37,7 @@ export default function HeroSection(props: Props) {
             initial={{ opacity: 0, x: "-25%" }}
             transition={{
               duration: 0.3,
-              delay: 0.3,
+              delay: 0.4,
               // ease: [0.01, 0.8, 0.5, 1.01],
               ease: "easeOut",
             }}
@@ -63,7 +63,7 @@ export default function HeroSection(props: Props) {
           initial={{ opacity: 0, x: "25%" }}
           transition={{
             duration: 0.3,
-            delay: 0.6,
+            delay: 0.7,
             // ease: [0.01, 0.8, 0.5, 1.01],
             ease: "easeOut",
           }}

@@ -60,7 +60,7 @@ export default async function Home() {
             initial={{ y: "-100%" }}
             transition={{
               duration: 0.3,
-              delay: 0,
+              delay: 0.1,
               ease: [0.01, 0.8, 0.5, 1.01],
             }}
             animate={{ y: "0%" }}

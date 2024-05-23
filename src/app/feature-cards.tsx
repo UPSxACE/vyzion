@@ -11,7 +11,7 @@ const container = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.3,
+      staggerChildren: 0.4,
     },
   },
 };
@@ -34,7 +34,7 @@ const item = {
     x: "0%",
     transition: {
       ease: "easeOut",
-      duration: 0.3,
+      duration: 0.4,
     },
   },
 };
@@ -48,7 +48,7 @@ export default function FeatureCards(props: Props) {
       variants={container}
       initial="hidden"
       whileInView="show"
-      viewport={{ amount: 0.6, once: true }}
+      viewport={{ amount: 0.4, once: true }}
       className="grid grid-cols-1 grid-rows-6 xl:grid-cols-3 sm:grid-rows-2 gap-5 py-[2.25rem]"
     >
       <MotionCard variants={item} data={data.card1} />
