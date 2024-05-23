@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import { forwardRef } from "react";
 import { Button } from "../ui/button";
 import MobileNavbarHamburger from "./mobile-navbar/mobile-navbar-hamburger";
 
-export default function Header() {
-  return (
-    <header className="h-[86px] flex py-6 z-10">
+const Header = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+  (props, ref) => (
+    <header {...props} ref={ref} className="h-[86px] flex py-6 z-10">
       <Link
         href="/"
         className="flex items-start  relative h-[40px] w-[149.25px]"
@@ -29,5 +30,9 @@ export default function Header() {
       </nav>
       <MobileNavbarHamburger className="ml-auto" />
     </header>
-  );
-}
+  )
+);
+
+Header.displayName = "Header";
+
+export default Header;

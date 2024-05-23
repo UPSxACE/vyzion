@@ -1,4 +1,6 @@
+"use client";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 
@@ -31,7 +33,17 @@ export default function HeroSection(props: Props) {
     >
       <div className="grid grid-cols-2 gap-20">
         <div className="flex-col justify-center hidden lg:flex">
-          <div className="w-full bg-[#2b2b2b] aspect-[1.4/1] p-2 rounded-3xl">
+          <motion.div
+            initial={{ opacity: 0, x: "-25%" }}
+            transition={{
+              duration: 0.3,
+              delay: 0.3,
+              // ease: [0.01, 0.8, 0.5, 1.01],
+              ease: "easeOut",
+            }}
+            animate={{ opacity: 1, x: "0%" }}
+            className="w-full bg-[#2b2b2b] aspect-[1.4/1] p-2 rounded-3xl"
+          >
             <div className="border-[3px] border-white h-full w-full p-3 rounded-[2.25rem]">
               <div className="bg-[#2b2b2b] w-full h-full relative rounded-3xl overflow-hidden">
                 <Image
@@ -45,9 +57,17 @@ export default function HeroSection(props: Props) {
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
-        <div
+        <motion.div
+          initial={{ opacity: 0, x: "25%" }}
+          transition={{
+            duration: 0.3,
+            delay: 0.6,
+            // ease: [0.01, 0.8, 0.5, 1.01],
+            ease: "easeOut",
+          }}
+          animate={{ opacity: 1, x: "0%" }}
           className={
             "flex flex-col col-span-2 lg:col-span-1 justify-center gap-4 z-10 py-10"
           }
@@ -63,7 +83,7 @@ export default function HeroSection(props: Props) {
           >
             {buttonText}
           </Button>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

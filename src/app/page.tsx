@@ -1,11 +1,11 @@
 import api from "@/api";
-import Card from "@/components/branding/card";
 import Footer from "@/components/ui-layout/footer";
-import Header from "@/components/ui-layout/header";
 import MobileNavbarContent from "@/components/ui-layout/mobile-navbar/mobile-navbar-content";
 import MobileNavbarItem from "@/components/ui-layout/mobile-navbar/mobile-navbar-item";
+import MotionHeader from "@/components/ui-layout/motion-header";
 import Image from "next/image";
 import Link from "next/link";
+import FeatureCards from "./feature-cards";
 import HeroSection from "./hero-section";
 
 export const revalidate = 1 * 60;
@@ -37,8 +37,8 @@ export default async function Home() {
 
   return (
     <main>
-      <section className="min-h-screen bg-[#242424] flex justify-center px-6 relative">
-        <div className="max-w-[1200px] flex-1 w-full flex flex-col relative overflow-hidden">
+      <section className="min-h-screen bg-[#242424] flex justify-center px-6 relative overflow-hidden">
+        <div className="max-w-[1200px] flex-1 w-full flex flex-col relative">
           <Image
             alt="background pattern"
             width={450}
@@ -56,7 +56,15 @@ export default async function Home() {
             src="/home-bg-pattern-bottom.png"
           />
 
-          <Header />
+          <MotionHeader
+            initial={{ y: "-100%" }}
+            transition={{
+              duration: 0.3,
+              delay: 0,
+              ease: [0.01, 0.8, 0.5, 1.01],
+            }}
+            animate={{ y: "0%" }}
+          />
           <HeroSection
             title={title}
             paragraph={paragraph}
@@ -78,14 +86,7 @@ export default async function Home() {
         <p className="font-light max-w-[560px] text-center">
           {features_paragraph}
         </p>
-        <div className="grid grid-cols-1 grid-rows-6 xl:grid-cols-3 sm:grid-rows-2 gap-5 py-[2.25rem]">
-          <Card data={homepageFeatureCards.card1} />
-          <Card data={homepageFeatureCards.card2} />
-          <Card data={homepageFeatureCards.card3} />
-          <Card data={homepageFeatureCards.card4} />
-          <Card data={homepageFeatureCards.card5} />
-          <Card data={homepageFeatureCards.card6} />
-        </div>
+        <FeatureCards data={homepageFeatureCards} />
       </section>
       <section className="flex justify-center bg-[#242424] px-6">
         <div className="max-w-[1200px] flex-1">

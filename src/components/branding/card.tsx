@@ -1,6 +1,7 @@
+import { forwardRef } from "react";
 import { IconComponent } from "../ssr-icon/icon-component";
 
-interface Props {
+export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   data: {
     icon: string;
     title: string;
@@ -9,11 +10,15 @@ interface Props {
   };
 }
 
-export default function Card(props: Props) {
+const Card = forwardRef<HTMLDivElement, CardProps>((props, ref) => {
   const { icon, title, paragraph, color } = props.data;
 
   return (
-    <article className="w-full xl:w-[380px] bg-white p-9 flex flex-col gap-4">
+    <article
+      {...props}
+      ref={ref}
+      className="w-full xl:w-[380px] bg-white p-9 flex flex-col gap-4"
+    >
       <span className="text-4xl" style={{ color }}>
         <IconComponent icon={icon} />
       </span>
@@ -21,4 +26,8 @@ export default function Card(props: Props) {
       <p className="font-light">{paragraph}</p>
     </article>
   );
-}
+});
+
+Card.displayName = "Card";
+
+export default Card;
