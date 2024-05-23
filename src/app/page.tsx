@@ -1,5 +1,5 @@
 import api from "@/api";
-import Card from "@/components/ui-branding/card";
+import Card from "@/components/branding/card";
 import Footer from "@/components/ui-layout/footer";
 import Header from "@/components/ui-layout/header";
 import HeroSection from "./hero-section";

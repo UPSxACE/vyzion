@@ -1,14 +1,15 @@
 import Footer from "@/components/ui-layout/footer";
 import Header from "@/components/ui-layout/header";
 import Link from "next/link";
+import ContactForm from "./contact-form";
 
 export default function ContactPage() {
   return (
     <main>
-      <section className="min-h-screen flex bg-[#242424] justify-center">
+      <section className="min-h-screen flex bg-[#242424] justify-center px-6">
         <div className="max-w-[1200px] flex-1 w-full flex flex-col text-[#97959a]">
           <Header />
-          <div className=" h-full flex justify-center items-center">
+          <div className=" h-full flex justify-center items-center py-10">
             {/* <h1 className="text-white text-2xl">
               Email:{" "}
               <Link className="underline" href="mailto:vyzion.pt@gmail.com">
@@ -28,9 +29,9 @@ export default function ContactPage() {
                   <div className="w-full bg-horizontal-dots bg-[length:5px_1px] bg-bottom bg-repeat-x h-[1px]" />
                 </div>
               </div>
-              <div className="grid grid-cols-2">
-                <form className="order-2 sm:order-1">a</form>
-                <article className="order-1 col-span-2 sm:col-span-1 justify-center min-h-72 bg-[#1a1a1a] flex-col sm:order-2 flex gap-2 p-6">
+              <div className="grid grid-cols-2 gap-6">
+                <ContactForm />
+                <article className="order-1 col-span-2 sm:col-span-1 justify-center bg-[#1a1a1a] flex-col sm:order-2 flex gap-2 p-6">
                   <div className="flex gap-2">
                     <span>Email:</span>
                     <Link
@@ -71,7 +72,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="flex justify-center bg-[#242424] border-t-[#404040] border-solid border-t border-0">
+      <section className="flex justify-center bg-[#242424] border-t-[#404040] border-solid border-t border-0 px-6">
         <div className="max-w-[1200px] flex-1">
           <Footer />
         </div>
