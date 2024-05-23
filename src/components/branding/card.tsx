@@ -17,7 +17,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>((props, ref) => {
     <article
       {...props}
       ref={ref}
-      className="w-full xl:w-[380px] bg-white p-9 flex flex-col gap-4 max-lg:!opacity-100 !translate-x-0"
+      className="w-full xl:w-[380px] bg-white p-9 flex flex-col gap-4 max-lg:!opacity-100 max-lg:!translate-x-0"
     >
       <span className="text-4xl" style={{ color }}>
         <IconComponent icon={icon} />
