@@ -20,7 +20,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>((props, ref) => {
       className="w-full xl:w-[380px] bg-white p-9 flex flex-col gap-4 max-lg:!opacity-100 max-lg:!translate-x-0"
     >
       <span className="text-4xl" style={{ color }}>
-        <IconComponent icon={icon} />
+        {icon}
       </span>
       <h1 className="text-2xl font-semibold text-[22px]">{title}</h1>
       <p className="font-light">{paragraph}</p>

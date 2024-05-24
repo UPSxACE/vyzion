@@ -11,7 +11,12 @@ const Header = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
         href="/"
         className="flex items-start  relative h-[40px] w-[149.25px]"
       >
-        <Image alt="logo" src="/logo-dark.svg" fill objectFit="contain" />
+        <Image
+          alt="logo"
+          src="/logo-dark.svg"
+          fill
+          className="object-contain"
+        />
       </Link>
       <nav className="ml-auto hidden lg:flex items-center gap-4 text-white">
         <Link href="/" className="px-2">

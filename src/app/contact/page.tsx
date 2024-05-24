@@ -85,17 +85,19 @@ export default function ContactPage() {
           <Image
             alt="background pattern"
             width={450}
-            height={160.7}
+            height={161}
             className="absolute top-0 left-[210px] z-0 object-cover"
             src="/home-bg-pattern-top.png"
             sizes="640px"
+            priority
           />
           <Image
             alt="background pattern"
             width={350}
-            height={259.7}
+            height={260}
             className="absolute bottom-[2px] right-0 z-0 object-cover"
             src="/home-bg-pattern-bottom.png"
+            priority
           />
         </div>
       </section>

@@ -1,4 +1,5 @@
 import { IconType } from "react-icons/";
+import "server-only";
 
 interface IIconComponent {
   icon: string;

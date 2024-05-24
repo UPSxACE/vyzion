@@ -54,6 +54,7 @@ export default function HeroSection(props: Props) {
                   blurDataURL="/home-bg-image-cropped-v2-blur.jpg"
                   priority
                   placeholder="blur"
+                  sizes="640px"
                 />
               </div>
             </div>

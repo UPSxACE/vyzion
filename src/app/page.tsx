@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import FeatureCards from "./feature-cards";
 import HeroSection from "./hero-section";
+import { IconComponent } from "@/components/ssr-icon/icon-component";
 
 export const revalidate = 1 * 60;
 
@@ -26,7 +27,12 @@ export default async function Home() {
     res.data.data.forEach(
       ({ attributes }: { attributes: Record<string, string> }) => {
         const { field, title, paragraph, icon, color } = attributes;
-        homepageFeatureCards[field] = { title, paragraph, icon, color };
+        homepageFeatureCards[field] = {
+          title,
+          paragraph,
+          icon: <IconComponent icon={icon} />,
+          color,
+        };
       },
       {}
     );
@@ -42,18 +48,20 @@ export default async function Home() {
           <Image
             alt="background pattern"
             width={450}
-            height={160.7}
+            height={161}
             className="absolute top-0 left-[210px] z-0 object-cover"
             src="/home-bg-pattern-top.png"
             sizes="640px"
+            priority
           />
 
           <Image
             alt="background pattern"
             width={350}
-            height={259.7}
+            height={260}
             className="absolute  bottom-[2px] right-0 z-0 object-cover"
             src="/home-bg-pattern-bottom.png"
+            priority
           />
 
           <MotionHeader
