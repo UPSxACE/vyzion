@@ -1,4 +1,5 @@
-import { MobileNavbarContext } from "@/components/ui-layout/mobile-navbar/mobile-navbar-context";
+import { MobileNavbarProvider } from "@/components/ui-layout/mobile-navbar/mobile-navbar-provider";
+import { InitialLoadProvider } from "@/hooks/initial-load/initial-load-provider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -18,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <MobileNavbarContext>{children}</MobileNavbarContext>
+        <InitialLoadProvider>
+          <MobileNavbarProvider>{children}</MobileNavbarProvider>
+        </InitialLoadProvider>
       </body>
     </html>
   );

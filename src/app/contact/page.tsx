@@ -9,7 +9,7 @@ import ContactForm from "./contact-form";
 export default function ContactPage() {
   return (
     <main>
-      <section className="min-h-screen flex bg-[#242424] justify-center px-6">
+      <section className="min-h-screen flex bg-[#242424] justify-center px-6 relative">
         <MobileNavbarContent className="absolute left-0 top-[86px] w-full">
           <MobileNavbarItem asChild>
             <Link href="/">Home</Link>
@@ -81,24 +81,26 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-        <div className="absolute max-w-[1200px] flex-1 w-full flex flex-col h-full z-0 overflow-hidden">
-          <Image
-            alt="background pattern"
-            width={450}
-            height={161}
-            className="absolute top-0 left-[210px] z-0 object-cover"
-            src="/home-bg-pattern-top.png"
-            sizes="640px"
-            priority
-          />
-          <Image
-            alt="background pattern"
-            width={350}
-            height={260}
-            className="absolute bottom-[2px] right-0 z-0 object-cover"
-            src="/home-bg-pattern-bottom.png"
-            priority
-          />
+        <div className="absolute flex-1 w-full flex justify-center h-full z-0 overflow-hidden px-6">
+          <div className="relative w-full h-full max-w-[1200px]">
+            <Image
+              alt="background pattern"
+              width={450}
+              height={161}
+              className="absolute top-0 left-[210px] z-0 object-cover"
+              src="/home-bg-pattern-top.png"
+              sizes="640px"
+              priority
+            />
+            <Image
+              alt="background pattern"
+              width={350}
+              height={260}
+              className="absolute bottom-[2px] right-0 z-0 object-cover"
+              src="/home-bg-pattern-bottom.png"
+              priority
+            />
+          </div>
         </div>
       </section>
 

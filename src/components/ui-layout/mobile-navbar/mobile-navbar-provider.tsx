@@ -14,7 +14,7 @@ const defaultValue: ContextValue = [false, () => false];
 
 export const MobileNavbarStateContext = createContext(defaultValue);
 
-export function MobileNavbarContext(props: { children: ReactNode }) {
+export function MobileNavbarProvider(props: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
 
   return (

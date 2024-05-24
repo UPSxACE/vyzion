@@ -1,13 +1,15 @@
 import api from "@/api";
+import { IconComponent } from "@/components/ssr-icon/icon-component";
 import Footer from "@/components/ui-layout/footer";
 import MobileNavbarContent from "@/components/ui-layout/mobile-navbar/mobile-navbar-content";
 import MobileNavbarItem from "@/components/ui-layout/mobile-navbar/mobile-navbar-item";
-import MotionHeader from "@/components/ui-layout/motion-header";
+import MotionHeader from "@/components/ui-layout/animated-header";
+import useInitialLoadDone from "@/hooks/initial-load/use-initial-load-done";
 import Image from "next/image";
 import Link from "next/link";
 import FeatureCards from "./feature-cards";
 import HeroSection from "./hero-section";
-import { IconComponent } from "@/components/ssr-icon/icon-component";
+import AnimatedHeader from "@/components/ui-layout/animated-header";
 
 export const revalidate = 1 * 60;
 
@@ -64,15 +66,7 @@ export default async function Home() {
             priority
           />
 
-          <MotionHeader
-            initial={{ y: "-100%" }}
-            transition={{
-              duration: 0.3,
-              delay: 0.1,
-              ease: [0.01, 0.8, 0.5, 1.01],
-            }}
-            animate={{ y: "0%" }}
-          />
+           <AnimatedHeader />
           <HeroSection
             title={title}
             paragraph={paragraph}

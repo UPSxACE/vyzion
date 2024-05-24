@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import useInitialLoadDone from "@/hooks/initial-load/use-initial-load-done";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
@@ -23,6 +24,9 @@ interface Props {
 export default function HeroSection(props: Props) {
   const { className } = props;
   const { title, paragraph, buttonText } = props;
+
+  const initialLoadDone = useInitialLoadDone();
+
   //max-w-[540px]
   return (
     <div
@@ -34,7 +38,11 @@ export default function HeroSection(props: Props) {
       <div className="grid grid-cols-2 gap-20">
         <div className="flex-col justify-center hidden lg:flex">
           <motion.div
-            initial={{ opacity: 0, x: "-25%" }}
+            initial={
+              initialLoadDone
+                ? { opacity: 1, x: "0%" }
+                : { opacity: 0, x: "-25%" }
+            }
             transition={{
               duration: 0.3,
               delay: 0.4,
@@ -61,7 +69,9 @@ export default function HeroSection(props: Props) {
           </motion.div>
         </div>
         <motion.div
-          initial={{ opacity: 0, x: "25%" }}
+          initial={
+            initialLoadDone ? { opacity: 1, x: "0%" } : { opacity: 0, x: "25%" }
+          }
           transition={{
             duration: 0.3,
             delay: 0.7,

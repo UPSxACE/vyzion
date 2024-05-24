@@ -4,7 +4,7 @@ import { Button, ButtonProps } from "@/components/ui/button";
 import { useContext } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { twMerge } from "tailwind-merge";
-import { MobileNavbarStateContext } from "./mobile-navbar-context";
+import { MobileNavbarStateContext } from "./mobile-navbar-provider";
 
 interface Props extends ButtonProps {}
 

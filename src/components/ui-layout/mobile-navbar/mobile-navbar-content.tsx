@@ -2,7 +2,7 @@
 
 import { HTMLAttributes, useContext } from "react";
 import { twMerge } from "tailwind-merge";
-import { MobileNavbarStateContext } from "./mobile-navbar-context";
+import { MobileNavbarStateContext } from "./mobile-navbar-provider";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {}
 
