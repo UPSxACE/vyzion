@@ -58,10 +58,8 @@ export default function HeroSection(props: Props) {
                   style={{ objectFit: "cover" }}
                   fill
                   alt="background image"
-                  src="/home-bg-image-cropped-v2.jpg"
-                  blurDataURL="/home-bg-image-cropped-v2-blur.jpg"
+                  src="/home-bg-image.jpg"
                   priority
-                  placeholder="blur"
                   sizes="640px"
                 />
               </div>
