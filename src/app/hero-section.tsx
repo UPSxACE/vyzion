@@ -55,9 +55,9 @@ export default function HeroSection(props: Props) {
             <div className="border-[3px] border-white h-full w-full p-3 rounded-[2.25rem]">
               <div className="bg-[#2b2b2b] w-full h-full relative rounded-3xl overflow-hidden">
                 <Image
+                  style={{ objectFit: "cover" }}
                   fill
                   alt="background image"
-                  className="object-cover"
                   src="/home-bg-image-cropped-v2.jpg"
                   blurDataURL="/home-bg-image-cropped-v2-blur.jpg"
                   priority
