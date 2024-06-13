@@ -55,10 +55,13 @@ export default function ContactForm() {
     setOpen(true);
 
     await contact(values)
-      .then((error) => {
-        if (error) {
-          throw new Error(error);
+      .then((result) => {
+        if (result !== true) {
+          throw new Error(
+            "Error submiting the contact form: " + String(result)
+          );
         }
+
         setTimeout(() => {
           toast.success(
             "Recebemos o seu email. Responderemos assim que possível.",

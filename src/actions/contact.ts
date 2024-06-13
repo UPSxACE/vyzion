@@ -3,7 +3,9 @@
 import api from "@/api";
 import { FormSubmitData } from "@/app/contact/contact-form";
 
-export default async function contact(data: FormSubmitData) {
+export default async function contact(
+  data: FormSubmitData
+): Promise<number | null | boolean> {
   let error: number | null = null;
 
   await api.post("api/contacts", { data }).catch((err) => {
@@ -11,5 +13,5 @@ export default async function contact(data: FormSubmitData) {
     error = err?.response?.status || 500;
   });
 
-  return error;
+  return error || true;
 }
