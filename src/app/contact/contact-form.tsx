@@ -1,10 +1,13 @@
 "use client";
 
+import contact from "@/actions/contact";
 import DarkFormInput from "@/components/dark-form/dark-form-input";
 import DarkFormItem from "@/components/dark-form/dark-form-item";
 import DarkFormLabel from "@/components/dark-form/dark-form-label";
 import DarkFormSubmitButton from "@/components/dark-form/dark-form-submit-button";
 import DarkFormTextarea from "@/components/dark-form/dark-form-textarea";
+import Spinner from "@/components/theme/spinner";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import {
   Form,
   FormControl,
@@ -12,7 +15,9 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
 
 const formSchema = z.object({
@@ -31,7 +36,11 @@ const formSchema = z.object({
     .min(1, { message: "Por favor, insira a sua mensagem." }),
 });
 
+export type FormSubmitData = z.infer<typeof formSchema>;
+
 export default function ContactForm() {
+  const [open, setOpen] = useState(false);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -42,12 +51,48 @@ export default function ContactForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  async function onSubmit(values: FormSubmitData) {
+    setOpen(true);
+
+    await contact(values)
+      .then((error) => {
+        if (error) {
+          throw new Error(error);
+        }
+        setTimeout(() => {
+          toast.success(
+            "Recebemos o seu email. Responderemos assim que possível.",
+            {
+              duration: 30000,
+              closeButton: false,
+            }
+          );
+          setOpen(false);
+          form.reset();
+        }, 1000);
+      })
+      .catch(() => {
+        toast.error(
+          "Infelizmente ocorreu um erro. Por favor, tente novamente mais tarde.",
+          {
+            duration: 30000,
+            closeButton: false,
+          }
+        );
+        setOpen(false);
+      });
   }
 
   return (
     <Form {...form}>
+      <Dialog open={open}>
+        <DialogContent
+          hideCloseButton
+          className="border-none bg-transparent text-white justify-center"
+        >
+          <Spinner className="[&>div]:!bg-white" />
+        </DialogContent>
+      </Dialog>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
         className="order-2 col-span-2 sm:order-1 sm:col-span-1 flex flex-col gap-3"

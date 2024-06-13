@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import useInitialLoadDone from "@/hooks/initial-load/use-initial-load-done";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 
 // const text = {
@@ -89,8 +90,9 @@ export default function HeroSection(props: Props) {
           <Button
             className="w-fit bg-[#141414] mt-12 py-6 px-10 hover:bg-[#606060]"
             size="lg"
+            asChild
           >
-            {buttonText}
+            <Link href="/contact">{buttonText}</Link>
           </Button>
         </motion.div>
       </div>
