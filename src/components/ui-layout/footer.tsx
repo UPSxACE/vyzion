@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaFacebookF, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import { Button } from "../ui/button";
 
 export default function Footer() {
@@ -10,35 +10,25 @@ export default function Footer() {
         <Button
           asChild
           variant="outline"
-          className="rounded-full p-0 w-[40px] h-[40px] !bg-blue-500 !text-white border-none hover:text-2xl hover:w-[60px] hover:h-[60px] transition-all duration-200"
+          className="text-2xl rounded-full p-0 w-[40px] h-[40px] !bg-transparent text-white hover:text-zinc-400 border-2 border-solid border-white hover:border-zinc-400 transition-all duration-200"
         >
           <Link href="https://facebook.com/vyzion.pt" target="_blank">
             <FaFacebookF />
           </Link>
         </Button>
-
-        {/* <Button
-          asChild
-          variant="outline"
-          className="rounded-full p-0 w-[40px] h-[40px] border-none bg-[#ca04d5] text-white "
-        > */}
-
-        <Link
-          href="https://instagram.com/vyzion.pt"
-          target="_blank"
-          className="text-lg rounded-full"
-        >
-          <img
-            src="/insta-logo.v3.svg"
-            alt="logo instagram"
-            className="h-[40px] hover:h-[60px] transition-all duration-200"
-          />
-        </Link>
-        {/* </Button> */}
         <Button
           asChild
           variant="outline"
-          className="rounded-full p-0 w-[40px] h-[40px] !bg-blue-400 !text-white border-none hover:text-2xl hover:w-[60px] hover:h-[60px] transition-all duration-200"
+          className="text-2xl rounded-full p-0 w-[40px] h-[40px] !bg-transparent text-white hover:text-zinc-400 border-2 border-solid border-white hover:border-zinc-400 transition-all duration-200"
+        >
+          <Link href="https://instagram.com/vyzion.pt" target="_blank">
+            <FaInstagram />
+          </Link>
+        </Button>
+        <Button
+          asChild
+          variant="outline"
+          className="text-2xl rounded-full p-0 w-[40px] h-[40px] !bg-transparent text-white hover:text-zinc-400 border-2 border-solid border-white hover:border-zinc-400 transition-all duration-200"
         >
           <Link href="https://twitter.com/vyzion_pt" target="_blank">
             <FaTwitter />

@@ -73,4 +73,20 @@
     body {
       @apply bg-background text-foreground;
     }
+    @keyframes scrollPosition {
+      0%, 20% {
+        object-position: top;
+      }
+      50%, 70% {
+        object-position: bottom;
+      }
+      100% {
+        object-position: top;
+      }
+    }
+
+
+    .animate-scroll:hover {
+      animation: scrollPosition 4s ease-in-out infinite;
+    }
   }

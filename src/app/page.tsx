@@ -1,15 +1,16 @@
 import api from "@/api";
+// import { Marquee } from "@/components/marquee";
 import { IconComponent } from "@/components/ssr-icon/icon-component";
+import AnimatedHeader from "@/components/ui-layout/animated-header";
 import Footer from "@/components/ui-layout/footer";
 import MobileNavbarContent from "@/components/ui-layout/mobile-navbar/mobile-navbar-content";
 import MobileNavbarItem from "@/components/ui-layout/mobile-navbar/mobile-navbar-item";
-import MotionHeader from "@/components/ui-layout/animated-header";
-import useInitialLoadDone from "@/hooks/initial-load/use-initial-load-done";
+// import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+// import { FaExternalLinkAlt } from "react-icons/fa";
 import FeatureCards from "./feature-cards";
 import HeroSection from "./hero-section";
-import AnimatedHeader from "@/components/ui-layout/animated-header";
 
 export const revalidate = 1 * 60;
 
@@ -66,7 +67,7 @@ export default async function Home() {
             priority
           />
 
-           <AnimatedHeader />
+          <AnimatedHeader />
           <HeroSection
             title={title}
             paragraph={paragraph}
@@ -90,6 +91,111 @@ export default async function Home() {
         </p>
         <FeatureCards data={homepageFeatureCards} />
       </section>
+      {/* <section className="bg-[#242424] py-16 flex flex-col items-center">
+        <h1 className="text-center text-4xl font-bold text-white mb-16">
+          Portfólio
+        </h1>
+        <Marquee
+          // fade
+          pauseOnHover
+          className="w-full max-w-[1200px]"
+          numberOfCopies={5}
+        >
+          <div className="bg-[#363739] w-[20rem] flex flex-col gap-1">
+            <div className="w-full">
+              <Image
+                width={320}
+                height={466}
+                className="w-full h-[26rem] object-cover object-top animate-scroll"
+                src={"/sc/mynotes.png"}
+                alt="screenshot"
+                sizes="50vw"
+              />
+            </div>
+            <div className="flex flex-col gap-1 bg-[#363739] p-3 pt-0 text-white">
+              <div className="flex gap-2 items-center">
+                <h1 className="text-xl font-bold mt-1">MyNotes</h1>
+                <Button
+                  variant="ghost"
+                  className="ml-auto bg-transparent text-white text-base h-auto px-3"
+                >
+                  <FaExternalLinkAlt />
+                </Button>
+              </div>
+
+              <p className="text-[0.8rem] leading-[1.25rem] font-light line-clamp-2 h-[2.5rem]">
+                Web aplicação de tomar notas. Desenvolvido em NextJS, .NET,
+                Postgres, e Docker.
+              </p>
+              <Button className="ml-auto bg-transparent text-white border border-solid border-white h-8 w-full mt-1">
+                Visitar
+              </Button>
+            </div>
+          </div>
+          <div className="bg-[#363739] w-[20rem] flex flex-col gap-1">
+            <div className="w-full">
+              <Image
+                width={320}
+                height={466}
+                className="w-full h-[26rem] object-cover object-top animate-scroll"
+                src={"/sc/fca.png"}
+                alt="screenshot"
+                sizes="50vw"
+              />
+            </div>
+            <div className="flex flex-col gap-1 bg-[#363739] p-3 pt-0 text-white">
+              <div className="flex gap-2 items-center">
+                <h1 className="text-xl font-bold mt-1">Feito com Amor</h1>
+                <Button
+                  variant="ghost"
+                  className="ml-auto bg-transparent text-white text-base h-auto px-3"
+                >
+                  <FaExternalLinkAlt />
+                </Button>
+              </div>
+
+              <p className="text-[0.8rem] leading-[1.25rem] font-light line-clamp-2 h-[2.5rem]">
+                Landing page personalizada para confeitaria. Desenvolvido em
+                NextJS, Docker e Strapi CMS.
+              </p>
+              <Button className="ml-auto bg-transparent text-white border border-solid border-white h-8 w-full mt-1">
+                Visitar
+              </Button>
+            </div>
+          </div>
+
+          {/* <div className="bg-white w-[20rem] flex flex-col gap-1 h-min">
+            <Image
+              width={320}
+              height={466}
+              className="w-full h-[26rem] object-cover object-top animate-scroll"
+              src={"/sc/mynotes.png"}
+            />
+            <div className="p-3">
+              <div className="flex gap-2 items-center">
+                <h1 className="text-xl font-bold mt-1">MyNotes 4</h1>
+                <Button
+                  variant="ghost"
+                  className="ml-auto bg-transparent text-black text-base h-auto px-3"
+                >
+                  <FaExternalLinkAlt />
+                </Button>
+              </div>
+              <p className="text-[0.8rem] leading-[1.25rem] font-light line-clamp-2 h-[2.5rem]">
+                Web aplicação de tomar notas. Desenvolvido em NextJS, .NET,
+                Postgres, e Docker.
+              </p>
+              <Button className="w-full bg-transparent text-black border border-solid border-black h-8 mt-1 px-3">
+                Visitar
+              </Button>
+            </div>
+          </div> */}
+      {/*
+        </Marquee>
+      </section>
+      <section className="bg-white h-96 flex justify-center items-center">
+        PEDIR ORÇAMENTO
+      </section> */}
       <section className="flex justify-center bg-[#242424] px-6">
         <div className="max-w-[1200px] flex-1">
           <Footer />

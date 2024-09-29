@@ -2,8 +2,10 @@ import Footer from "@/components/ui-layout/footer";
 import Header from "@/components/ui-layout/header";
 import MobileNavbarContent from "@/components/ui-layout/mobile-navbar/mobile-navbar-content";
 import MobileNavbarItem from "@/components/ui-layout/mobile-navbar/mobile-navbar-item";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import ContactForm from "./contact-form";
 
 export default function ContactPage() {
@@ -23,8 +25,8 @@ export default function ContactPage() {
           <div className=" h-full flex justify-center items-center py-10">
             {/* <h1 className="text-white text-2xl">
               Email:{" "}
-              <Link className="underline" href="mailto:vyzion.pt@gmail.com">
-                vyzion.pt@gmail.com
+              <Link className="underline" href="mailto:geral@vyzion.pt">
+                geral@vyzion.pt
               </Link>
             </h1> */}
             <div className="w-full max-w-[900px]">
@@ -42,38 +44,56 @@ export default function ContactPage() {
               </div>
               <div className="grid grid-cols-2 gap-6">
                 <ContactForm />
-                <article className="order-1 col-span-2 sm:col-span-1 justify-center bg-[#161616] flex-col sm:order-2 flex gap-2 p-6">
-                  <div className="flex gap-2">
-                    <span>Email:</span>
-                    <Link
-                      className="text-white"
-                      href="mailto:vyzion.pt@gmail.com"
+                <article className="text-center items-center order-1 col-span-2 sm:col-span-1 justify-center bg-[#161616] flex-col sm:order-2 flex gap-2 p-6">
+                  <div className="aspect-[484/383] w-28 relative ml-auto mr-auto mb-2">
+                    <Image
+                      fill
+                      src="./vyzion-white-gray.svg"
+                      alt="vyzion logo"
+                    />
+                  </div>
+
+                  <div className="flex gap-4 h-[60px]  items-center">
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="text-2xl rounded-full p-0 w-[40px] h-[40px] !bg-transparent text-white hover:text-zinc-400 border-2 border-solid border-white hover:border-zinc-400 transition-all duration-200"
                     >
-                      vyzion.pt@gmail.com
-                    </Link>
+                      <Link
+                        href="https://facebook.com/vyzion.pt"
+                        target="_blank"
+                      >
+                        <FaFacebookF />
+                      </Link>
+                    </Button>
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="text-2xl rounded-full p-0 w-[40px] h-[40px] !bg-transparent text-white hover:text-zinc-400 border-2 border-solid border-white hover:border-zinc-400 transition-all duration-200"
+                    >
+                      <Link
+                        href="https://instagram.com/vyzion.pt"
+                        target="_blank"
+                      >
+                        <FaInstagram />
+                      </Link>
+                    </Button>
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="text-2xl rounded-full p-0 w-[40px] h-[40px] !bg-transparent text-white hover:text-zinc-400 border-2 border-solid border-white hover:border-zinc-400 transition-all duration-200"
+                    >
+                      <Link
+                        href="https://twitter.com/vyzion_pt"
+                        target="_blank"
+                      >
+                        <FaTwitter />
+                      </Link>
+                    </Button>
                   </div>
                   <div className="flex gap-2">
-                    <span>Facebook:</span>
-                    <Link
-                      className="text-white"
-                      href="https://facebook.com/vyzion.pt"
-                    >
-                      @vyzion.pt
-                    </Link>
-                  </div>
-                  <div className="flex gap-2">
-                    <span>Instagram:</span>
-                    <Link
-                      className="text-white"
-                      href="https://instagram.com/vyzion.pt"
-                    >
-                      @vyzion.pt
-                    </Link>
-                  </div>
-                  <div className="flex gap-2">
-                    <span>Twitter:</span>
-                    <Link className="text-white" href="https://x.com/vyzion_pt">
-                      @vyzion_pt
+                    <Link className="text-white" href="mailto:geral@vyzion.pt">
+                      geral@vyzion.pt
                     </Link>
                   </div>
                 </article>
